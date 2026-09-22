@@ -14,7 +14,7 @@ Every mode also writes `<project-name>-bugs.csv` using `templates/bug-sheet-temp
 
 **Option A — as a plugin (from a git repo):**
 ```
-/plugin marketplace add mtahir08/sqa-skills
+/plugin marketplace add Geeksofkolachi/sqa-skills
 /plugin install sqa-skill
 ```
 Commands appear as `/sqa-skill:test-full` etc.
