@@ -1,0 +1,11 @@
+{
+  "name": "sqa-skills",
+  "owner": { "name": "mtahir08" },
+  "plugins": [
+    {
+      "name": "sqa-skill",
+      "source": "./",
+      "description": "Senior SQA testing skills: /test-readonly, /test-full, /test-security with Markdown + CSV bug reports."
+    }
+  ]
+}

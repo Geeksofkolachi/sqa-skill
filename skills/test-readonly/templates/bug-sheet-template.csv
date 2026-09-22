@@ -1,0 +1,8 @@
+Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours
+Login button does not respond on mobile Safari,To Do,High,Bug,"1. Open the app on iOS Safari.
+2. Enter valid credentials.
+3. Tap the Login button.","Nothing happens — no spinner, no navigation, no error toast.","User is logged in and routed to the dashboard.",https://example.com/issue/101,"mobile, auth",3,2026-05-15,4
+Add password-strength meter to signup,In Progress,Medium,Task,"1. Open the signup form.
+2. Type a weak password.","No feedback shown about strength.","A meter under the password field reflects strength as the user types.",,frontend,5,,8
+Order list intermittently shows duplicates,In Review,Critical,Bug,"1. Navigate to Orders.
+2. Refresh several times.","Some orders appear twice in the list.","Each order should appear exactly once.",https://example.com/issue/102,"orders, backend",8,2026-05-10,6
