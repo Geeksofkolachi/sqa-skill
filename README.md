@@ -1,34 +1,28 @@
 # sqa-skill
 
-Senior SQA testing skills for Claude Code. One plugin, three commands:
+Senior SQA testing as a Claude plugin. One command, three modes:
 
-| Command | What it does | Report |
-|---|---|---|
-| `/test-readonly` | Strict read-only audit: UI, data, navigation, responsive, console, GET APIs | `SQA_ReadOnly_Test_Report.md` |
-| `/test-full` | Full functional, regression, exploratory, API, UI/UX, permissions testing | `SQA_Test_Report.md` |
-| `/test-security` | Security, authz, API, business-logic, performance, 100K-user readiness | `Security_API_Performance_Test_Report.md` |
+```text
+/test readonly    strict read-only audit  → SQA_ReadOnly_Test_Report.md
+/test full        complete functional QA  → SQA_Test_Report.md
+/test security    security / API / perf   → Security_API_Performance_Test_Report.md
+```
 
-Every mode also writes `<project-name>-bugs.csv` using `templates/bug-sheet-template.csv`.
+Every mode also writes `<project-name>-bugs.csv`.
 
 ## Install
 
-**Option A — as a plugin (from a git repo):**
 ```
-/plugin marketplace add Geeksofkolachi/sqa-skills
-/plugin install sqa-skill
+/plugin marketplace add Geeksofkolachi/sqa-skill
+/plugin install test
 ```
-Commands appear as `/sqa-skill:test-full` etc.
 
-**Option B — as plain skills (from this zip):**
-```bash
-unzip sqa-skill.zip && cp -R sqa-skill/skills/* ~/.claude/skills/
-```
-Commands appear as `/test-full` etc. in every project.
+Or on claude.ai: **Plugins → Add → Add marketplace**, paste `Geeksofkolachi/sqa-skill`, then install the plugin.
 
 ## Use
 
 ```text
-/test-full
+/test full
 Project name: Acme Customer Portal
 Application URL: https://staging.example.com
 Environment: Staging
@@ -39,11 +33,13 @@ Scope: full functional, responsive, API, permissions, UI/UX
 ## Layout
 
 ```
-sqa-skill/
-├── .claude-plugin/plugin.json
-├── README.md
-└── skills/
-    ├── test-readonly/  SKILL.md, references/prompt.md, templates/bug-sheet-template.csv
-    ├── test-full/      SKILL.md, references/prompt.md, templates/bug-sheet-template.csv
-    └── test-security/  SKILL.md, references/prompt.md, templates/bug-sheet-template.csv
+.claude-plugin/          plugin.json, marketplace.json
+skills/test/             the /test command (routes by mode)
+skills/test-readonly/    read-only prompt + CSV template
+skills/test-full/        full-QA prompt + CSV template
+skills/test-security/    security prompt + CSV template
 ```
+
+Note: on claude.ai a plugin surfaces only the skill whose name matches the plugin name, which is why
+`test` is the single entry point. In Claude Code the other three are also directly available as
+`/test:test-full` and so on.

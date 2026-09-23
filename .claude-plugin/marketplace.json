@@ -1,11 +1,13 @@
 {
   "name": "sqa-skills",
-  "owner": { "name": "Geeks of Kolachi" },
+  "owner": {
+    "name": "Geeks of Kolachi"
+  },
   "plugins": [
     {
-      "name": "sqa-skill",
+      "name": "test",
       "source": "./",
-      "description": "Senior SQA testing skills: /test-readonly, /test-full, /test-security with Markdown + CSV bug reports."
+      "description": "Senior SQA testing: /test readonly, /test full, /test security. Markdown report + CSV bug sheet."
     }
   ]
 }

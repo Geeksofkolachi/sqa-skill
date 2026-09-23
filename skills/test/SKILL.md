@@ -1,12 +1,12 @@
 ---
-name: sqa-skill
+name: test
 description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, or security-review an application.
-version: 1.2.0
+version: 2.0.0
 user-invocable: true
 argument-hint: "readonly|full|security [project name] [app url] [environment]"
 ---
 
-# /sqa-skill
+# /test
 
 Senior SQA Lead with 15+ years of experience. Pick the mode from the first argument (ask if absent):
 
