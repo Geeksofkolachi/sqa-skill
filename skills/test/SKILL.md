@@ -1,7 +1,7 @@
 ---
 name: test
 description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance), localization (i18n/l10n audit). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, security-review, or localization-test an application.
-version: 2.2.0
+version: 2.3.0
 user-invocable: true
 argument-hint: "readonly|full|security|localization [project name] [app url] [environment]"
 ---
@@ -20,6 +20,17 @@ Senior SQA Lead with 15+ years of experience. Pick the mode from the first argum
 Read that mode's prompt file and follow it exactly.
 
 Both deliverables are prefixed with the project name, slugified the same way: spaces → hyphens, filename-unsafe characters stripped. For project `Acme Customer Portal` in `full` mode that is `Acme-Customer-Portal-SQA_Test_Report.md` and `Acme-Customer-Portal-bugs.csv`. This naming overrides any fixed filename in the mode's `references/prompt.md`.
+
+## Token budget
+
+Testing is the expensive part, not the report. Keep it cheap:
+
+1. **Read pages as text, not pictures.** Use the accessibility tree / page text (`read_page`, `get_page_text`) for every check about content, labels, state, structure, validation messages and console/network errors. A screenshot costs roughly 20x a text read of the same page.
+2. **Screenshot only what is genuinely visual** — layout breakage, overflow, RTL mirroring, contrast, images — and only once per confirmed bug, as evidence. Never screenshot to "see where I am".
+3. **Agree the scope before starting.** State the flow list and a page budget, get a yes, then test. Do not crawl the whole app by default.
+4. **Write findings out as you go.** Append each validated bug to the CSV immediately; never hold the accumulated evidence in context to write at the end, and never re-read the report to add to it.
+5. **Run long crawls in a subagent** (one per mode or per flow group) so the page dumps stay out of the main conversation and only the findings come back.
+6. **One pass per check.** Do not re-verify a page you already read unless a fix is being retested.
 
 ## Required inputs
 

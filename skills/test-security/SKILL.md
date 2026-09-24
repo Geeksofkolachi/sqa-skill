@@ -1,7 +1,7 @@
 ---
 name: test-security
 description: Senior security, API, authorization, business-logic, performance, scalability, and 100K-user-readiness review of a web app. Produces Security_API_Performance_Test_Report.md and <project>-bugs.csv. Use when the user runs /test-security or asks for a security / pentest-style / performance review.
-version: 2.2.0
+version: 2.3.0
 user-invocable: true
 argument-hint: "[project name] [app url] [environment]"
 ---

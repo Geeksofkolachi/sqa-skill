@@ -1,7 +1,7 @@
 ---
 name: test-full
 description: Comprehensive Senior SQA test of a web app: functional, positive/negative, responsive, regression, exploratory, API/network, UI/UX, permissions, and end-to-end. Produces SQA_Test_Report.md and <project>-bugs.csv. Use when the user runs /test-full or wants complete functional QA with bug reports.
-version: 2.2.0
+version: 2.3.0
 user-invocable: true
 argument-hint: "[project name] [app url] [environment]"
 ---

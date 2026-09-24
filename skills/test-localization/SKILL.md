@@ -1,7 +1,7 @@
 ---
 name: test-localization
 description: Senior SQA localization/i18n audit of a web app as both guest and authenticated user — missing or hardcoded strings, mixed languages, date/number/currency formatting, RTL, text overflow, locale persistence, and guest vs authenticated differences. Produces SQA_Localization_Test_Report.md and <project>-bugs.csv.
-version: 2.2.0
+version: 2.3.0
 user-invocable: true
 argument-hint: "[project name] [app url] [locales]"
 ---

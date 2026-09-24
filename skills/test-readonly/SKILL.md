@@ -1,7 +1,7 @@
 ---
 name: test-readonly
 description: Strict read-only Senior SQA audit of a web app: UI, displayed data, navigation, responsive, console, and GET/read API inspection. Produces SQA_ReadOnly_Test_Report.md and <project>-bugs.csv. Use when the user runs /test-readonly or wants QA without modifying any data.
-version: 2.2.0
+version: 2.3.0
 user-invocable: true
 argument-hint: "[project name] [app url] [environment]"
 ---
