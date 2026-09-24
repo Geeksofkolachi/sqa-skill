@@ -6,6 +6,7 @@ Senior SQA testing as a Claude plugin. One command, three modes:
 /test readonly    strict read-only audit  → SQA_ReadOnly_Test_Report.md
 /test full        complete functional QA  → SQA_Test_Report.md
 /test security    security / API / perf   → Security_API_Performance_Test_Report.md
+/test localization  i18n / l10n audit     → SQA_Localization_Test_Report.md
 ```
 
 Every mode also writes `<project-name>-bugs.csv`.

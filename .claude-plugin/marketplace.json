@@ -7,7 +7,7 @@
     {
       "name": "test",
       "source": "./",
-      "description": "Senior SQA testing: /test readonly, /test full, /test security. Markdown report + CSV bug sheet."
+      "description": "Senior SQA testing: /test readonly, /test full, /test security, /test localization. Markdown report + CSV bug sheet."
     }
   ]
 }
