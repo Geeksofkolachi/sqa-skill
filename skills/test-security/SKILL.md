@@ -1,7 +1,7 @@
 ---
 name: test-security
 description: Senior security, API, authorization, business-logic, performance, scalability, and 100K-user-readiness review of a web app. Produces Security_API_Performance_Test_Report.md and <project>-bugs.csv. Use when the user runs /test-security or asks for a security / pentest-style / performance review.
-version: 1.1.0
+version: 2.2.0
 user-invocable: true
 argument-hint: "[project name] [app url] [environment]"
 ---
@@ -28,7 +28,7 @@ Test only the supplied authorized application, APIs, accounts, and domains. No d
 
 ## Deliverables
 
-- `Security_API_Performance_Test_Report.md`
+- `<project-name>-Security_API_Performance_Test_Report.md`
 - `<project-name>-bugs.csv` — replace spaces with hyphens, strip filename-unsafe characters (e.g. `Acme Customer Portal` → `Acme-Customer-Portal-bugs.csv`). This naming rule overrides any fixed CSV filename in `references/prompt.md`.
 
 Use `templates/bug-sheet-template.csv` as the CSV schema. Preserve this exact header and column order:

@@ -1,7 +1,7 @@
 ---
 name: test-readonly
 description: Strict read-only Senior SQA audit of a web app: UI, displayed data, navigation, responsive, console, and GET/read API inspection. Produces SQA_ReadOnly_Test_Report.md and <project>-bugs.csv. Use when the user runs /test-readonly or wants QA without modifying any data.
-version: 1.1.0
+version: 2.2.0
 user-invocable: true
 argument-hint: "[project name] [app url] [environment]"
 ---
@@ -28,7 +28,7 @@ Login with the supplied credentials is the only permitted write-like request. Af
 
 ## Deliverables
 
-- `SQA_ReadOnly_Test_Report.md`
+- `<project-name>-SQA_ReadOnly_Test_Report.md`
 - `<project-name>-bugs.csv` — replace spaces with hyphens, strip filename-unsafe characters (e.g. `Acme Customer Portal` → `Acme-Customer-Portal-bugs.csv`). This naming rule overrides any fixed CSV filename in `references/prompt.md`.
 
 Use `templates/bug-sheet-template.csv` as the CSV schema. Preserve this exact header and column order:

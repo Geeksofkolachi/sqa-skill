@@ -1,7 +1,7 @@
 ---
 name: test
 description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance), localization (i18n/l10n audit). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, security-review, or localization-test an application.
-version: 2.1.1
+version: 2.2.0
 user-invocable: true
 argument-hint: "readonly|full|security|localization [project name] [app url] [environment]"
 ---
@@ -12,12 +12,14 @@ Senior SQA Lead with 15+ years of experience. Pick the mode from the first argum
 
 | Mode | Follow | Report |
 |---|---|---|
-| `readonly` | `../test-readonly/references/prompt.md` | `SQA_ReadOnly_Test_Report.md` |
-| `full` | `../test-full/references/prompt.md` | `SQA_Test_Report.md` |
-| `security` | `../test-security/references/prompt.md` | `Security_API_Performance_Test_Report.md` |
-| `localization` | `../test-localization/references/prompt.md` | `SQA_Localization_Test_Report.md` |
+| `readonly` | `../test-readonly/references/prompt.md` | `<project-name>-SQA_ReadOnly_Test_Report.md` |
+| `full` | `../test-full/references/prompt.md` | `<project-name>-SQA_Test_Report.md` |
+| `security` | `../test-security/references/prompt.md` | `<project-name>-Security_API_Performance_Test_Report.md` |
+| `localization` | `../test-localization/references/prompt.md` | `<project-name>-SQA_Localization_Test_Report.md` |
 
 Read that mode's prompt file and follow it exactly.
+
+Both deliverables are prefixed with the project name, slugified the same way: spaces → hyphens, filename-unsafe characters stripped. For project `Acme Customer Portal` in `full` mode that is `Acme-Customer-Portal-SQA_Test_Report.md` and `Acme-Customer-Portal-bugs.csv`. This naming overrides any fixed filename in the mode's `references/prompt.md`.
 
 ## Required inputs
 

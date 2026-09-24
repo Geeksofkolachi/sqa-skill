@@ -1,7 +1,7 @@
 ---
 name: test-full
 description: Comprehensive Senior SQA test of a web app: functional, positive/negative, responsive, regression, exploratory, API/network, UI/UX, permissions, and end-to-end. Produces SQA_Test_Report.md and <project>-bugs.csv. Use when the user runs /test-full or wants complete functional QA with bug reports.
-version: 1.1.0
+version: 2.2.0
 user-invocable: true
 argument-hint: "[project name] [app url] [environment]"
 ---
@@ -28,7 +28,7 @@ Use only the supplied authorized application, environment, and test credentials.
 
 ## Deliverables
 
-- `SQA_Test_Report.md`
+- `<project-name>-SQA_Test_Report.md`
 - `<project-name>-bugs.csv` — replace spaces with hyphens, strip filename-unsafe characters (e.g. `Acme Customer Portal` → `Acme-Customer-Portal-bugs.csv`). This naming rule overrides any fixed CSV filename in `references/prompt.md`.
 
 Use `templates/bug-sheet-template.csv` as the CSV schema. Preserve this exact header and column order:
