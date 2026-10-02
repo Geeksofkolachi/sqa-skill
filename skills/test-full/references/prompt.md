@@ -699,7 +699,7 @@ Provide a short senior-QA justification for the recommendation.
 
 Generate:
 
-`SQA_Test_Report.md`
+`<project-name>-SQA_Test_Report.md`
 
 Use this structure:
 
@@ -758,7 +758,7 @@ Explain why.
 
 Generate:
 
-`SQA_Bug_Report.csv`
+`<project-name>-bugs.csv`
 
 IMPORTANT:
 
@@ -802,3 +802,5 @@ If there are zero bugs, still produce the requested report and clearly state:
 Most importantly:
 
 **Test this product with the judgment, skepticism, risk awareness, and attention to detail expected from a Senior SQA Lead with 15+ years of professional software testing experience who is personally responsible for production release quality.**
+
+> **Filename rule (overrides every filename above):** every deliverable is prefixed with the project name, slugified as spaces → hyphens with filename-unsafe characters stripped — e.g. project `Rahmah Connect` → `Rahmah-Connect-SQA_Test_Report.md`, `Rahmah-Connect-bugs.csv`. Ask for the project name before writing any file.

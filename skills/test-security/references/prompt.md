@@ -734,15 +734,15 @@ Long-term improvements
 
 Generate:
 
-`security-testing-report.md`
+`<project-name>-Security_API_Performance_Test_Report.md`
 
-`security-bugs.csv`
+`<project-name>-bugs.csv`
 
-`performance-report.md`
+`<project-name>-Performance_Report.md`
 
 `api-performance.csv`
 
-`security-summary.md`
+`<project-name>-Security_Summary.md`
 
 CSV bug columns:
 
@@ -786,3 +786,5 @@ Continuously ask:
 **What breaks first as the platform approaches 100,000 users?**
 
 Test as a security engineer, API engineer, performance engineer, and malicious-but-authorized user simultaneously.
+
+> **Filename rule (overrides every filename above):** every deliverable is prefixed with the project name, slugified as spaces → hyphens with filename-unsafe characters stripped — e.g. project `Rahmah Connect` → `Rahmah-Connect-SQA_Test_Report.md`, `Rahmah-Connect-bugs.csv`. Ask for the project name before writing any file.

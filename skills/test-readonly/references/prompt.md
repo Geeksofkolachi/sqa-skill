@@ -540,11 +540,11 @@ Avoid duplicate bug reports.
 
 Create:
 
-`SQA_ReadOnly_Test_Report.md`
+`<project-name>-SQA_ReadOnly_Test_Report.md`
 
 and
 
-`SQA_ReadOnly_Bug_Report.csv`
+`<project-name>-bugs.csv`
 
 The attached CSV template is the **source of truth for the CSV structure**.
 
@@ -659,3 +659,5 @@ Explore and inspect the application thoroughly, but protect the existing applica
 If you are uncertain whether an action is read-only, **do not execute it**. Inspect it visually and continue testing other safe areas.
 
 Perform the assessment with the judgment and attention to detail expected from a **Senior SQA Lead with 15+ years of professional testing experience**.
+
+> **Filename rule (overrides every filename above):** every deliverable is prefixed with the project name, slugified as spaces → hyphens with filename-unsafe characters stripped — e.g. project `Rahmah Connect` → `Rahmah-Connect-SQA_Test_Report.md`, `Rahmah-Connect-bugs.csv`. Ask for the project name before writing any file.
