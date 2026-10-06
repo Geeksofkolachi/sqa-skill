@@ -48,7 +48,7 @@ Ask for anything missing: project name (names the CSV), application URL, environ
 The mode's Markdown report plus `<project-name>-bugs.csv` (spaces → hyphens, unsafe characters stripped), using `../test-readonly/templates/bug-sheet-template.csv` and preserving this header exactly:
 
 ```csv
-Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours
+Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours,Assignee
 ```
 
-One row per validated bug, `N/A` where unavailable. If no bugs are found, still produce both files.
+One row per validated bug, `N/A` where unavailable. `Assignee` stays empty for the user to fill with the assignee's email. Never name the file after the template or `SQA` — it is always `<project-name>-bugs.csv`. If no bugs are found, still produce both files.

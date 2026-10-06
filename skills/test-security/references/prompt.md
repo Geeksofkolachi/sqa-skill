@@ -759,7 +759,8 @@ Actual Result
 Security Impact  
 Evidence  
 Recommended Fix  
-Status
+Status  
+Assignee (leave empty — the user fills in the assignee's email)
 
 ---
 

@@ -34,7 +34,7 @@ Test only the supplied authorized application, APIs, accounts, and domains. No d
 Use `templates/bug-sheet-template.csv` as the CSV schema. Preserve this exact header and column order:
 
 ```csv
-Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours
+Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours,Assignee
 ```
 
-One row per validated bug; `N/A` for unavailable values. If no bugs are found, still produce both files (CSV with header only).
+One row per validated bug; `N/A` for unavailable values, except `Assignee`: leave it empty for the user to fill with the assignee's email. Never name the file after the template or `SQA` — it is always `<project-name>-bugs.csv`. If no bugs are found, still produce both files (CSV with header only).
