@@ -1,7 +1,7 @@
 ---
 name: test-mobile
 description: Senior SQA functional test of a native mobile app — Android (APK/AAB on a device or emulator) and iOS (simulator .app build, or an assisted manual pass for a TestFlight build). Covers install/launch, onboarding, auth, core flows, offline/network, permissions, background/resume, rotation, deep links, and crash/ANR log review. Produces <project>-SQA_Mobile_Test_Report.md and <project>-bugs.csv.
-version: 2.4.2
+version: 2.4.3
 user-invocable: true
 argument-hint: "[project name] [android|ios|both] [apk/aab/.app path, or installed package/bundle id] [environment]"
 ---
@@ -9,6 +9,20 @@ argument-hint: "[project name] [android|ios|both] [apk/aab/.app path, or install
 # /test-mobile
 
 Act as a Senior SQA Lead with 15+ years of mobile experience. Follow `references/prompt.md` in this folder exactly.
+
+## How to run
+
+`/test mobile …` and `/test-mobile …` are identical. Arguments are optional — with none, ask for them.
+
+```text
+/test mobile "Rahmah Connect" android com.rahmaconnect.app staging   # installed on emulator
+/test mobile "Rahmah Connect" android ~/builds/app.apk staging       # from an APK or AAB
+/test mobile "Rahmah Connect" ios com.gok.rahmaconnect staging       # installed on simulator
+/test mobile "Rahmah Connect" ios ~/builds/App.app staging           # from a simulator build
+/test mobile "Rahmah Connect" both staging                           # both platforms
+```
+
+If the third argument looks like a path, treat it as a build artifact; otherwise treat it as an installed package name or bundle id.
 
 ## Required inputs
 
