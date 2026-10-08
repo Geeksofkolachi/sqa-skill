@@ -1,9 +1,9 @@
 ---
 name: test
-description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance), localization (i18n/l10n audit). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, security-review, or localization-test an application.
-version: 2.3.1
+description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance), localization (i18n/l10n audit), mobile (native Android APK/AAB and iOS simulator builds). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, security-review, or localization-test an application.
+version: 2.4.0
 user-invocable: true
-argument-hint: "readonly|full|security|localization [project name] [app url] [environment]"
+argument-hint: "readonly|full|security|localization|mobile [project name] [app url or build path] [environment]"
 ---
 
 # /test
@@ -16,6 +16,7 @@ Senior SQA Lead with 15+ years of experience. Pick the mode from the first argum
 | `full` | `../test-full/references/prompt.md` | `<project-name>-SQA_Test_Report.md` |
 | `security` | `../test-security/references/prompt.md` | `<project-name>-Security_API_Performance_Test_Report.md` |
 | `localization` | `../test-localization/references/prompt.md` | `<project-name>-SQA_Localization_Test_Report.md` |
+| `mobile` | `../test-mobile/references/prompt.md` | `<project-name>-SQA_Mobile_Test_Report.md` |
 
 Read that mode's prompt file and follow it exactly.
 
@@ -42,6 +43,7 @@ Ask for anything missing: project name (names the CSV), application URL, environ
 - `full`: authorized app and test credentials only; test data only; nothing destructive.
 - `security`: authorized app, APIs, accounts and domains only; no destructive testing, DoS, exfiltration, malware, or third-party attacks.
 - `localization`: authorized app and test accounts only; negative cases are in scope, destructive actions on real data are not.
+- `mobile`: authorized build and test accounts only; ask which device/emulator to use when more than one is connected; a TestFlight `.ipa` cannot be automated — use a simulator build or an assisted manual pass.
 
 ## Deliverables
 
