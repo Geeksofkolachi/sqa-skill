@@ -1,7 +1,7 @@
 ---
 name: test
 description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance), localization (i18n/l10n audit), mobile (native Android APK/AAB and iOS simulator builds). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, security-review, or localization-test an application.
-version: 2.4.3
+version: 2.5.0
 user-invocable: true
 argument-hint: "readonly|full|security|localization|mobile [project name] [app url or build path] [environment]"
 ---
@@ -18,7 +18,7 @@ Senior SQA Lead with 15+ years of experience. Pick the mode from the first argum
 | `localization` | `../test-localization/references/prompt.md` | `<project-name>-SQA_Localization_Test_Report.md` |
 | `mobile` | `../test-mobile/references/prompt.md` | `<project-name>-SQA_Mobile_Test_Report.md` |
 
-Read that mode's prompt file and follow it exactly.
+Read that mode's prompt file and follow it exactly. Also read `references/common-rules.md` — the shared agent, safety, bug-validation, severity/priority, evidence and execution rules that apply to every mode. Where a mode's own prompt is stricter, the stricter rule wins.
 
 Both deliverables are prefixed with the project name, slugified the same way: spaces → hyphens, filename-unsafe characters stripped. For project `Acme Customer Portal` in `full` mode that is `Acme-Customer-Portal-SQA_Test_Report.md` and `Acme-Customer-Portal-bugs.csv`. This naming overrides any fixed filename in the mode's `references/prompt.md`.
 
