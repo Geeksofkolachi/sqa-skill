@@ -1,7 +1,7 @@
 ---
 name: test-mobile
 description: Senior SQA functional test of a native mobile app — Android (APK/AAB on a device or emulator) and iOS (simulator .app build, or an assisted manual pass for a TestFlight build). Covers install/launch, onboarding, auth, core flows, offline/network, permissions, background/resume, rotation, deep links, and crash/ANR log review. Produces <project>-SQA_Mobile_Test_Report.md and <project>-bugs.csv.
-version: 2.4.0
+version: 2.4.1
 user-invocable: true
 argument-hint: "[project name] [android|ios|both] [path to apk/aab/.app] [environment]"
 ---
@@ -44,7 +44,7 @@ Authorized build and test accounts only. Test data only — no destructive actio
 Slugify the project name: spaces → hyphens, filename-unsafe characters stripped. Use `templates/bug-sheet-template.csv` and preserve this exact header:
 
 ```csv
-Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours
+Title,Status,Priority,Type,Steps to Reproduce,Actual Result,Expected Result,URL,Labels,Story Points,Due Date,Estimated Hours,Assignee
 ```
 
-The `URL` column holds the screen name or deep link instead of a web URL. One row per validated bug, `N/A` where unavailable. If no bugs are found, still produce both files.
+The `URL` column holds the screen name or deep link instead of a web URL. One row per validated bug, `N/A` where unavailable. `Assignee` stays empty for the user to fill. If no bugs are found, still produce both files.
