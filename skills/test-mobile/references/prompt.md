@@ -16,7 +16,9 @@ adb devices -l
 
 If more than one device or emulator is listed, **ask the user which serial to use**. Never pick for them.
 
-Install:
+If the app is **already installed**, skip installing: get the package name from the user, or `adb shell pm list packages -3` and let them pick. Launch with `adb shell monkey -p <package> -c android.intent.category.LAUNCHER 1`. Do not `pm clear` or uninstall without asking — it destroys their session and test data.
+
+Otherwise install:
 
 ```bash
 adb install -r <path>.apk
@@ -36,7 +38,7 @@ Record the package name and versionName:
 aapt dump badging <apk> | grep -E "package:|versionName"
 ```
 
-Clear state before the first run so onboarding is actually exercised:
+For a fresh artifact, clear state before the first run so onboarding is actually exercised (skip this on an already-installed build unless the user agrees):
 
 ```bash
 adb shell pm clear <package>
@@ -46,7 +48,7 @@ Drive the app with ARTEMIS `mobile_run_task`, passing the device serial explicit
 
 ### iOS
 
-Open the live panel first (`attach`), then `launch` the simulator `.app`. Read screens with `inspect` (accessibility tree) rather than `screenshot` wherever the check is about text, labels, state or enablement.
+Open the live panel first (`attach`). If the app is already installed on the booted simulator, `launch` it by `bundle_id` with no `app_path` — list candidates with `xcrun simctl listapps booted` if the id is unknown. Otherwise `launch` the simulator `.app`. Read screens with `inspect` (accessibility tree) rather than `screenshot` wherever the check is about text, labels, state or enablement.
 
 If the build is a TestFlight `.ipa`, stop and follow the assisted manual pass described in `SKILL.md` — do not attempt to install it.
 
@@ -65,7 +67,7 @@ The device loop is the expensive part, not the report.
 
 Cover these, recording pass/fail per item:
 
-**Install & launch** — clean install, upgrade over the previous version (state and data survive), cold start, launch time, splash, first-run permission prompts.
+**Install & launch** — skip the install items when testing an already-installed build, and say so in the report. Clean install, upgrade over the previous version (state and data survive), cold start, launch time, splash, first-run permission prompts.
 
 **Onboarding & auth** — signup, login, invalid credentials, password reset, social/SSO where present, logout, session persistence across restart, token expiry and refresh, biometric unlock if offered.
 

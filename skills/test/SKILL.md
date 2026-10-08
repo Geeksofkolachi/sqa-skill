@@ -1,7 +1,7 @@
 ---
 name: test
 description: Senior SQA testing for a web app. Modes: readonly (strict read-only audit), full (complete functional QA), security (security/API/performance), localization (i18n/l10n audit), mobile (native Android APK/AAB and iOS simulator builds). Produces a Markdown report plus a CSV bug sheet. Use when the user asks to QA, test, audit, security-review, or localization-test an application.
-version: 2.4.1
+version: 2.4.2
 user-invocable: true
 argument-hint: "readonly|full|security|localization|mobile [project name] [app url or build path] [environment]"
 ---
